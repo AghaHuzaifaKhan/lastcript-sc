@@ -23,7 +23,7 @@ const navItems: NavItems = [
   { title: 'Team', href: '/features' },
   { title: 'Services', href: '/pricing' },
   
-  { title: 'Portfolio', href: '/contact' },
+  { title: 'Portfolio', href: '/features' },
   { title: 'Contact', href: '/contact' },
   // { title: 'Sign up', href: '/sign-up', outlined: true },
 ];

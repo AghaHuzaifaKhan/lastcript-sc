@@ -7,37 +7,25 @@ import SectionTitle from 'components/SectionTitle';
 export default function PricingTablesSection() {
   return (
     <Wrapper>
-      <SectionTitle>Flexible pricing for agile teams</SectionTitle>
+      <SectionTitle>The Work We Do</SectionTitle>
       <AutofitGrid>
         <PricingCard
-          title="free"
-          description="Give us a try for free"
-          benefits={['1 seat', '1 active project', 'Ulimited viewers', '10 blocks']}
+          title="Web & App Development"
+          description="We specialize in building robust, high-performance web and mobile applications tailored to your needs. Whether you're a startup, an enterprise or an individual, we develop solutions that grow with you."
         >
-          $0<span>/month</span>
+          {/* $0<span>/month</span> */}
         </PricingCard>
         <PricingCard
-          title="Starter"
-          description="Best for individual desginers"
-          benefits={['1 seat', '3 active project', 'Ulimited viewers', '100 blocks', 'CSV Downloader', 'Password protection']}
-          isOutlined
+          title="Graphics Design & Digital Art"
+          description="We bring your creative vision to life with logo designs and custom digital illustrations, tailored to an individual's or a brand’s personality. Whether it's for marketing, social media, or personal identity, we make sure it resonates with your audience."       
         >
-          $29<span>/month</span>
+          {/* $29<span>/month</span> */}
         </PricingCard>
         <PricingCard
-          title="Premium"
-          description="Get your team together"
-          benefits={[
-            '10 seat',
-            '10 active project',
-            'Ulimited viewers',
-            'Unlimited blocks',
-            'CSV Downloader',
-            'Password protection',
-            'Customization',
-          ]}
+          title="AI Model Development"
+          description="We develop machine learning and deep learning models specifically designed to tackle industry-specific challenges,optimizing decision-making, automation, and customer experiences and ensuring high accuracy and efficiency."
         >
-          $79<span>/month</span>
+          {/* $79<span>/month</span> */}
         </PricingCard>
       </AutofitGrid>
     </Wrapper>

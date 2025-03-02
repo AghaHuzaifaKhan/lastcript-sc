@@ -3,77 +3,42 @@ import AutofitGrid from 'components/AutofitGrid';
 import BasicCard from 'components/BasicCard';
 import Page from 'components/Page';
 import SectionTitle from 'components/SectionTitle';
-import YoutubeVideo from 'components/YoutubeVideo';
+import WaveCta from 'components/WaveCta';
 import { media } from 'utils/media';
 
 const FEATURES = [
   {
     imageUrl: '/grid-icons/asset-1.svg',
-    title: 'Lorem ipsum dolor sit amet.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
+    title: 'A Huzaifa K.',
+    description: 'Email: sabanvd34@gmail.com\nLinkedIn: linkedIn.com\nSkills: Singing',
+
   },
   {
-    imageUrl: '/grid-icons/asset-2.svg',
-    title: 'Lorem ipsum dolor sit amet.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
+    imageUrl: '/grid-icons/asset-1.svg',
+    title: 'A Huzaifa K.',
+    description: 'Email: sabanvd34@gmail.com\nLinkedIn: linkedIn.com\nSkills: Singing',
+
   },
   {
-    imageUrl: '/grid-icons/asset-3.svg',
-    title: 'Lorem ipsum dolor sit amet.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
-  },
-  {
-    imageUrl: '/grid-icons/asset-4.svg',
-    title: 'Lorem ipsum dolor sit amet.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
-  },
-  {
-    imageUrl: '/grid-icons/asset-5.svg',
-    title: 'Lorem ipsum dolor sit amet.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
-  },
-  {
-    imageUrl: '/grid-icons/asset-6.svg',
-    title: 'Lorem ipsum dolor sit amet.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
-  },
-  {
-    imageUrl: '/grid-icons/asset-7.svg',
-    title: 'Lorem ipsum dolor sit amet.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
-  },
-  {
-    imageUrl: '/grid-icons/asset-8.svg',
-    title: 'Lorem ipsum dolor sit amet.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
-  },
-  {
-    imageUrl: '/grid-icons/asset-9.svg',
-    title: 'Lorem ipsum dolor sit amet.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
+    imageUrl: '/grid-icons/asset-1.svg',
+    title: 'A Huzaifa K.',
+    description: 'Email: sabanvd34@gmail.com\nLinkedIn: linkedIn.com\nSkills: Singing',
+
   },
 ];
 
 export default function FeaturesPage() {
   return (
-    <Page title="Features" description="Elit aute do nisi Lorem id ea culpa sint duis eu tempor dolore elit.">
+    <Page title="Our Team" description="Meet the Minds Behind Lastcript.">
       <Wrapper>
-        <SectionTitle>Check out this quick introduction</SectionTitle>
-        <YoutubeVideo url="https://www.youtube.com/watch?v=BggrpKfqh1c" />
+        <SectionTitle style={{margin: '10rem'}}>Our Quick Intro</SectionTitle>
+        {/* <YoutubeVideo url="https://www.youtube.com/watch?v=BggrpKfqh1c" /> */}
         <CustomAutofitGrid>
           {FEATURES.map((singleFeature, idx) => (
             <BasicCard key={singleFeature.title} {...singleFeature} />
           ))}
         </CustomAutofitGrid>
+        <WaveCta />
       </Wrapper>
     </Page>
   );
@@ -81,8 +46,7 @@ export default function FeaturesPage() {
 
 const Wrapper = styled.div`
   & > *:not(:first-child) {
-    margin-top: 10rem;
-  }
+   
 `;
 
 const CustomAutofitGrid = styled(AutofitGrid)`

@@ -7,12 +7,11 @@ import RichText from './RichText';
 interface PricingCardProps {
   title: string;
   description: string;
-  benefits: string[];
   isOutlined?: boolean;
 }
 
-export default function PricingCard({ title, description, benefits, isOutlined, children }: PropsWithChildren<PricingCardProps>) {
-  const isAnyBenefitPresent = benefits?.length;
+export default function PricingCard({ title, description, isOutlined, children }: PropsWithChildren<PricingCardProps>) {
+  // const isAnyBenefitPresent = benefits?.length;
 
   return (
     <Wrapper isOutlined={isOutlined}>
@@ -20,15 +19,15 @@ export default function PricingCard({ title, description, benefits, isOutlined, 
       <Description>{description}</Description>
       <PriceContainer>
         <Price>{children}</Price>
-        {isAnyBenefitPresent && (
+        {/* {isAnyBenefitPresent && ( */}
           <CustomRichText>
-            <ul>
+            {/* <ul>
               {benefits.map((singleBenefit, idx) => (
                 <li key={idx}>{singleBenefit}</li>
               ))}
-            </ul>
+            </ul> */}
           </CustomRichText>
-        )}
+        {/* )} */}
       </PriceContainer>
       <CustomButton>Get started</CustomButton>
     </Wrapper>
@@ -61,7 +60,7 @@ const Title = styled.h3`
 `;
 
 const Description = styled.p`
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 `;
 
 const PriceContainer = styled.div`

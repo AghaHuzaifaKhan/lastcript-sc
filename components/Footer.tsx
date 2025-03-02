@@ -20,8 +20,8 @@ const footerItems: FooterItems = [
   {
     title: 'About Us',
     items: [
-      { title: 'Features', href: '/features' },
-      { title: 'Portfolio', href: '/something' },
+      { title: 'Services', href: '/features' },
+      { title: 'Portfolio', href: '/features' },
       { title: 'Team', href: '/something-else' },
     ],
   },

@@ -5,7 +5,7 @@ import PricingTablesSection from 'views/PricingPage/PricingTablesSection';
 
 export default function PricingPage() {
   return (
-    <Page title="Pricing" description="Cupidatat et reprehenderit ullamco aute ullamco anim tempor.">
+    <Page title="Our Services" description="Whether you're looking to build a digital presence or stunning visuals, we've got you covered!">
       <Wrapper>
         <PricingTablesSection />
         <FaqSection />

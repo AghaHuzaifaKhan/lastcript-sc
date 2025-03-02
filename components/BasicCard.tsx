@@ -42,4 +42,5 @@ const Title = styled.div`
 
 const Description = styled.div`
   opacity: 0.6;
+  white-space: pre-line;
 `;

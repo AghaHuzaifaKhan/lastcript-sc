@@ -74,6 +74,7 @@ const AccordionWrapper = styled.div`
   cursor: pointer;
   border-radius: 0.6rem;
   transition: opacity 0.2s;
+  margin-top: 2rem;
 
   ${media('<=desktop')} {
     width: 100%;
