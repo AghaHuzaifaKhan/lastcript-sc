@@ -5,8 +5,13 @@ export default function InformationSection() {
     <Wrapper>
       <h3>Contact Info</h3>
       <p>
-        <span>Email:</span> support@myawesomesaas.com
+        <span>Email:</span> info@lastcript.com
       </p>
+
+      <p style={{marginTop: '20px'}}>
+        <span>Location:</span> Karachi, Pakistan
+      </p>
+
     </Wrapper>
   );
 }

@@ -14,12 +14,15 @@ export default function Hero() {
   return (
     <HeroWrapper>
       <Contents>
-        <CustomOverTitle>the coolest, saas product you have ever seen</CustomOverTitle>
-        <Heading>Make your life easier with our SaaS</Heading>
+        <CustomOverTitle>Smart Solutions for a Digital World</CustomOverTitle>
+        <Heading>Seamless IT Services for Every Business</Heading>
         <Description>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, tempora qui. Explicabo voluptate iure ipsum molestias
-          repudiandae perspiciatis nostrum praesentium, unde pariatur tempora magni rem. Necessitatibus facilis obcaecati ratione.
+        In a world driven by technology, Lastcript helps businesses stay competitive with innovative and reliable IT solutions.
         </Description>
+        <Description>
+        Whether you need cloud computing, digital art, or custom software, we’ve got you covered!
+        </Description>
+        
         <CustomButtonGroup>
           <Button onClick={() => setIsModalOpened(true)}>
             View our Services <span>&rarr;</span>

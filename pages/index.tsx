@@ -27,13 +27,15 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
         <WhiteBackgroundContainer>
           <Hero />
           {/* <Partners /> */}
-          <BasicSection imageUrl="/demo-illustration-1.svg" title="Lorem ipsum dolor sit amet consectetur." overTitle="sit amet gogo">
+          <BasicSection imageUrl="/demo-illustration-1.svg" title="What We Do." overTitle="About Us">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore
-              voluptate quo deleniti animi laboriosam.{' '}
-              <Link href="/help-center">Possimus ullam velit rem itaque consectetur, in distinctio?</Link> Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Soluta repellendus quia quos obcaecati nihil. Laudantium non accusantium, voluptate eum nesciunt
-              at suscipit quis est soluta?
+            We are your dedicated technology partner, committed to delivering innovative and customized digital solutions. We empower businesses and individuals with technology that enhances efficiency, scalability, and success.
+            </p>
+            <p style={{marginTop: "10px"}}>
+            We believe in delivering more than just services—we deliver value. Our team is driven by innovation, expertise, and a deep understanding of the evolving digital landscape. With a client-centric approach, we ensure that every solution we build aligns perfectly with your business objectives.
+            </p>
+            <p style={{marginTop: "10px"}}>
+            Our goal is to become an extension of your team, working alongside you to ensure seamless digital transformation and long-term success.
             </p>
           </BasicSection>
           {/* <BasicSection imageUrl="/demo-illustration-2.svg" title="Lorem ipsum dolor sit." overTitle="lorem ipsum" reversed>

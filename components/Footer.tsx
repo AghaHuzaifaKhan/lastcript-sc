@@ -18,32 +18,14 @@ const footerItems: FooterItems = [
     ],
   },
   {
-    title: 'Product',
+    title: 'About Us',
     items: [
       { title: 'Features', href: '/features' },
-      { title: 'Something', href: '/something' },
-      { title: 'Something else', href: '/something-else' },
-      { title: 'And something else', href: '/and-something-else' },
+      { title: 'Portfolio', href: '/something' },
+      { title: 'Team', href: '/something-else' },
     ],
   },
-  {
-    title: 'Knowledge',
-    items: [
-      { title: 'Blog', href: '/blog' },
-      { title: 'Contact', href: '/contact' },
-      { title: 'FAQ', href: '/faq' },
-      { title: 'Help Center', href: '/help-center' },
-    ],
-  },
-  {
-    title: 'Something',
-    items: [
-      { title: 'Features2', href: '/features2' },
-      { title: 'Something2', href: '/something2' },
-      { title: 'Something else2', href: '/something-else2' },
-      { title: 'And something else2', href: '/and-something-else2' },
-    ],
-  },
+ 
 ];
 
 export default function Footer() {
@@ -53,6 +35,7 @@ export default function Footer() {
         <ListContainer>
           {footerItems.map((singleItem) => (
             <FooterList key={singleItem.title} {...singleItem} />
+            
           ))}
         </ListContainer>
         <BottomBar>
@@ -75,7 +58,7 @@ export default function Footer() {
               </a>
             </NextLink>
           </ShareBar>
-          <Copyright>&copy; Copyright 2021 My Saas Startup</Copyright>
+          <Copyright>&copy; Copyright 2025 Lastcript</Copyright>
         </BottomBar>
       </Container>
     </FooterWrapper>
@@ -108,13 +91,15 @@ const FooterWrapper = styled.div`
   padding-bottom: 4rem;
   background: rgb(var(--secondary));
   color: rgb(var(--textSecondary));
+  border-top: 1px solid white;
 `;
 
 const ListContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 10rem;
 `;
 
 const ListHeader = styled.p`
