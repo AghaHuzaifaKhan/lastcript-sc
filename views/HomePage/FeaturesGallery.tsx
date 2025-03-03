@@ -77,11 +77,11 @@ export default function FeaturesGallery() {
     <FeaturesGalleryWrapper>
       <Content>
         {/* <OverTitle>features</OverTitle> */}
-        <SectionTitle>What are you joining us for?</SectionTitle>
+        <SectionTitle style={{marginTop: '5rem'}}>What are you joining us for?</SectionTitle>
       </Content>
       <GalleryWrapper>
         <TabsContainer>{tabsMarkup}</TabsContainer>
-        {imagesMarkup}
+        {/* {imagesMarkup} */}
       </GalleryWrapper>
     </FeaturesGalleryWrapper>
   );

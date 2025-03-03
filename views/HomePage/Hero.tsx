@@ -7,6 +7,8 @@ import HeroIllustration from 'components/HeroIllustation';
 import OverTitle from 'components/OverTitle';
 import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { media } from 'utils/media';
+import NextImage from 'next/image';
+import Home from "../../public/main-images/landing-pic.png";
 
 export default function Hero() {
   const { setIsModalOpened } = useNewsletterModalContext();
@@ -35,7 +37,7 @@ export default function Hero() {
         </CustomButtonGroup>
       </Contents>
       <ImageContainer>
-        <HeroIllustration />
+      <NextImage src={Home} width={500} height={500} alt="Home"/> 
       </ImageContainer>
     </HeroWrapper>
   );
@@ -71,16 +73,12 @@ const ImageContainer = styled.div`
   justify-content: flex-end;
   align-items: flex-start;
 
-  svg {
-    max-width: 45rem;
-  }
+  
 
   ${media('<=desktop')} {
     margin-top: 2rem;
     justify-content: center;
-    svg {
-      max-width: 80%;
-    }
+    
   }
 `;
 

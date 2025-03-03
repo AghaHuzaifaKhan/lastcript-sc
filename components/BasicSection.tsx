@@ -17,7 +17,7 @@ export default function BasicSection({ imageUrl, title, overTitle, reversed, chi
   return (
     <BasicSectionWrapper reversed={reversed}>
       <ImageContainer>
-        <NextImage src={imageUrl} alt={title} layout="fill" objectFit="cover" />
+        <NextImage src={imageUrl} alt={title}  width={500} height={500}/>
       </ImageContainer>
       <ContentContainer>
         <CustomOverTitle>{overTitle}</CustomOverTitle>
@@ -52,8 +52,8 @@ const ImageContainer = styled.div`
   &:before {
     display: block;
     content: '';
-    width: 100%;
-    padding-top: calc((9 / 16) * 100%);
+    
+
   }
 
   & > div {

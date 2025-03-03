@@ -12,6 +12,8 @@ import Container from './Container';
 import Drawer from './Drawer';
 import { HamburgerIcon } from './HamburgerIcon';
 import Logo from './Logo';
+import mainLogo from '../public/logo-main.png';
+import NextImage from 'next/image';
 
 const ColorSwitcher = dynamic(() => import('../components/ColorSwitcher'), { ssr: false });
 
@@ -69,7 +71,7 @@ export default function Navbar({ items }: NavbarProps) {
       <Content>
         <NextLink href="/" passHref>
           <LogoWrapper>
-            <Logo />
+          <NextImage src={mainLogo} width={200} height={200} alt="lastcript"/> 
           </LogoWrapper>
         </NextLink>
         <NavItemList>
@@ -132,6 +134,7 @@ const LogoWrapper = styled.a`
   display: flex;
   margin-right: auto;
   text-decoration: none;
+  padding: 8px;
 
   color: rgb(var(--logoColor));
 `;

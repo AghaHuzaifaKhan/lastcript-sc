@@ -6,6 +6,7 @@ import { A11y, Autoplay, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Container from 'components/Container';
 import Separator from 'components/Separator';
+import SectionTitle from 'components/SectionTitle';
 import { media } from 'utils/media';
 
 const TESTIMONIALS = [
@@ -41,7 +42,8 @@ const TESTIMONIALS = [
 export default function Testimonials() {
   return (
     <div>
-      <Separator />
+      <SectionTitle style={{margin: '5rem', borderBottom: '1px solid white'}}>What Clients Say</SectionTitle>
+      
       <TestimonialsWrapper>
         <Swiper modules={[Navigation, Autoplay, A11y]} slidesPerView={1} autoplay={{ delay: 8000 }} centeredSlides navigation loop>
           {TESTIMONIALS.map((singleTestimonial, idx) => (

@@ -12,6 +12,8 @@ import Hero from 'views/HomePage/Hero';
 import Partners from 'views/HomePage/Partners';
 import ScrollableBlogPosts from 'views/HomePage/ScrollableBlogPosts';
 import Testimonials from 'views/HomePage/Testimonials';
+import NextImage from 'next/image';
+import aboutUs from "../public/main-images/about-us.jpg";
 
 export default function Homepage({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
@@ -27,7 +29,7 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
         <WhiteBackgroundContainer>
           <Hero />
           {/* <Partners /> */}
-          <BasicSection imageUrl="/demo-illustration-1.svg" title="What We Do." overTitle="About Us">
+          <BasicSection imageUrl="/main-images/about-us.jpg" title="What We Do." overTitle="About Us">
             <p>
             We are your dedicated technology partner, committed to delivering innovative and customized digital solutions. We empower businesses and individuals with technology that enhances efficiency, scalability, and success.
             </p>
