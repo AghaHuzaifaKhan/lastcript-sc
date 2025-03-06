@@ -46,7 +46,7 @@ const FEATURES = [
   {
     imageUrl: '/grid-icons/asset-1.svg',
     title: 'A Huzaifa K.',
-    description: 'Email: sabanvd34@gmail.com\nLinkedIn: linkedIn.com\nSkills: Singing',
+    description: 'Email: sabanvd34@gmail.com\nLinkedIn: linkedIn.com\nSkills: cooking',
 
   },
 ];
