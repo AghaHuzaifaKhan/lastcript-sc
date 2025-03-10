@@ -70,9 +70,9 @@ export default function Navbar({ items }: NavbarProps) {
     <NavbarContainer hidden={isNavbarHidden} transparent={isTransparent}>
       <Content>
         <NextLink href="/" passHref>
-          <LogoWrapper>
+          {/* <LogoWrapper>
           <NextImage src={mainLogo} width={110} height={120} alt="lastcript"/> 
-          </LogoWrapper>
+          </LogoWrapper> */}
         </NextLink>
         <NavItemList>
           {items.map((singleItem) => (
