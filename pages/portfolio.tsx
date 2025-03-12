@@ -8,45 +8,45 @@ import { media } from 'utils/media';
 
 const FEATURES = [
   {
-    imageUrl: '/grid-icons/asset-1.svg',
-    title: 'A Huzaifa K.',
-    description: 'Email: sabanvd34@gmail.com\nLinkedIn: linkedIn.com\nSkills: Singing',
+    imageUrl: '/portfolio/chatbot.jpg',
+    title: 'BOTBUDDY',
+    description: 'An AI-powered chatbot that can create different character/avatars, that provides automated responses, assists with FAQs, and enhances user interaction.',
 
   },
   {
-    imageUrl: '/grid-icons/asset-1.svg',
-    title: 'A Huzaifa K.',
-    description: 'Email: sabanvd34@gmail.com\nLinkedIn: linkedIn.com\nSkills: Singing',
+    imageUrl: '/portfolio/daily_schedule.jpg',
+    title: 'MYDAYPLAN',
+    description: 'A daily schedule manager application that helps users organize tasks, set reminders, add & update their schedule and boost productivity.',
 
   },
   {
-    imageUrl: '/grid-icons/asset-1.svg',
-    title: 'A Huzaifa K.',
-    description: 'Email: sabanvd34@gmail.com\nLinkedIn: linkedIn.com\nSkills: Singing',
+    imageUrl: '/portfolio/ecourse.jpg',
+    title: 'EDUNEST',
+    description: 'An online courses platform where users can enroll in courses, learn and study with their plan, track progress, and access learning quizzes and cheat sheets.',
 
   },
   {
-    imageUrl: '/grid-icons/asset-1.svg',
-    title: 'A Huzaifa K.',
-    description: 'Email: sabanvd34@gmail.com\nLinkedIn: linkedIn.com\nSkills: Singing',
+    imageUrl: '/portfolio/football.jpg',
+    title: 'MATCHPULSE',
+    description: 'A football match stats management app that records and analyzes game statistics in real-time.',
 
   },
   {
-    imageUrl: '/grid-icons/asset-1.svg',
-    title: 'A Huzaifa K.',
-    description: 'Email: sabanvd34@gmail.com\nLinkedIn: linkedIn.comm\nSkills: Singing',
+    imageUrl: '/portfolio/gym.png',
+    title: 'GYMGO',
+    description: 'A fitness tracking app that provides personalized gym workout plans and tracks progress and creates analytics.',
 
   },
   {
-    imageUrl: '/grid-icons/asset-1.svg',
-    title: 'A Huzaifa K.',
-    description: 'Email: sabanvd34@gmail.com\nLinkedIn: linkedIn.com\nSkills: Singing',
+    imageUrl: '/portfolio/player_data.jpg',
+    title: 'STATVISION',
+    description: 'A football player data application for tracking and analyzing player performance and statistics.',
 
   },
   {
-    imageUrl: '/grid-icons/asset-1.svg',
-    title: 'A Huzaifa K.',
-    description: 'Email: sabanvd34@gmail.com\nLinkedIn: linkedIn.com\nSkills: cooking',
+    imageUrl: '/portfolio/trading.png',
+    title: 'INVESTMATE',
+    description: 'A real-time market analysis and trading automation bot with AI-powered insights and analytics.',
 
   },
 ];

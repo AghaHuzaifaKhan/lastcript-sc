@@ -71,7 +71,7 @@ export default function Navbar({ items }: NavbarProps) {
       <Content>
         <NextLink href="/" passHref>
           <LogoWrapper>
-          <NextImage src={mainLogo} width={110} height={120} alt="lastcript"/> 
+          {/* <NextImage src={mainLogo} width={110} height={120} alt="lastcript"/>  */}
           </LogoWrapper>
         </NextLink>
         <NavItemList>
