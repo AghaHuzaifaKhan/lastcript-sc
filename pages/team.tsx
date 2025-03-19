@@ -8,21 +8,21 @@ import { media } from 'utils/media';
 
 const FEATURES = [
   {
-    imageUrl: '/grid-icons/asset-1.svg',
-    title: 'A Huzaifa K.',
-    description: 'Email: sabanvd34@gmail.com\nLinkedIn: linkedIn.com\nSkills: Singing',
+    imageUrl: '/team/ah.png',
+    title: 'A Huzaifa k.',
+    description: 'Email: Huzaifa.lastcript@gmail.com\nLinkedIn: linkedIn.com\n',
 
   },
   {
-    imageUrl: '/grid-icons/asset-1.svg',
-    title: 'A Huzaifa K.',
-    description: 'Email: sabanvd34@gmail.com\nLinkedIn: linkedIn.com\nSkills: Singing',
+    imageUrl: '/team/sm.png',
+    title: 'S. Mujtaba.',
+    description: 'Email: mujtaba.lastcript@gmail.com\nLinkedIn: linkedIn.com\n',
 
   },
   {
-    imageUrl: '/grid-icons/asset-1.svg',
-    title: 'A Huzaifa K.',
-    description: 'Email: sabanvd34@gmail.com\nLinkedIn: linkedIn.com\nSkills: Singing',
+    imageUrl: '/team/sn.png',
+    title: 'Saba N.',
+    description: 'Email: saba.lastcript@gmail.com\nLinkedIn: linkedIn.com\n',
 
   },
 ];
