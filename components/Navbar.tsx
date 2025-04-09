@@ -1,5 +1,6 @@
+import NextImage from 'next/image';
+import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
@@ -12,8 +13,10 @@ import Container from './Container';
 import Drawer from './Drawer';
 import { HamburgerIcon } from './HamburgerIcon';
 import Logo from './Logo';
+import LogoDark from './LogoDark';
+import NavLinks from './NavLinks';
+import NextLink from './NextLink';
 import mainLogo from '../public/logo-main.png';
-import NextImage from 'next/image';
 
 const ColorSwitcher = dynamic(() => import('../components/ColorSwitcher'), { ssr: false });
 
@@ -110,24 +113,29 @@ function NavItem({ href, title, outlined }: SingleNavItem) {
   );
 }
 
-const CustomButton = styled(Button)`
-  padding: 0.75rem 1.5rem;
-  line-height: 1.8;
-`;
-
-const NavItemList = styled.div`
+const NavbarContainer = styled.div<NavbarContainerProps>`
   display: flex;
-  list-style: none;
+  position: sticky;
+  top: 0;
+  padding: 1.5rem 0;
+  width: 100%;
+  height: 8rem;
+  z-index: var(--z-navbar);
 
-  ${media('<desktop')} {
-    display: none;
-  }
+  background-color: rgb(var(--navbarBackground));
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+  visibility: ${(p) => (p.hidden ? 'hidden' : 'visible')};
+  transform: ${(p) => (p.hidden ? `translateY(-8rem) translateZ(0) scale(1)` : 'translateY(0) translateZ(0) scale(1)')};
+
+  transition-property: transform, visibility, height, box-shadow, background-color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
 `;
 
-const HamburgerMenuWrapper = styled.div`
-  ${media('>=desktop')} {
-    display: none;
-  }
+const Content = styled(Container)`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 `;
 
 const LogoWrapper = styled.a`
@@ -137,6 +145,15 @@ const LogoWrapper = styled.a`
   padding: 8px;
 
   color: rgb(var(--logoColor));
+`;
+
+const NavItemList = styled.div`
+  display: flex;
+  list-style: none;
+
+  ${media('<desktop')} {
+    display: none;
+  }
 `;
 
 const NavItemWrapper = styled.li<Partial<SingleNavItem>>`
@@ -165,32 +182,18 @@ const NavItemWrapper = styled.li<Partial<SingleNavItem>>`
   }
 `;
 
-const NavbarContainer = styled.div<NavbarContainerProps>`
-  display: flex;
-  position: sticky;
-  top: 0;
-  padding: 1.5rem 0;
-  width: 100%;
-  height: 8rem;
-  z-index: var(--z-navbar);
-
-  background-color: rgb(var(--navbarBackground));
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
-  visibility: ${(p) => (p.hidden ? 'hidden' : 'visible')};
-  transform: ${(p) => (p.hidden ? `translateY(-8rem) translateZ(0) scale(1)` : 'translateY(0) translateZ(0) scale(1)')};
-
-  transition-property: transform, visibility, height, box-shadow, background-color;
-  transition-duration: 0.15s;
-  transition-timing-function: ease-in-out;
-`;
-
-const Content = styled(Container)`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+const HamburgerMenuWrapper = styled.div`
+  ${media('>=desktop')} {
+    display: none;
+  }
 `;
 
 const ColorSwitcherContainer = styled.div`
   width: 4rem;
   margin: 0 1rem;
+`;
+
+const CustomButton = styled(Button)`
+  padding: 0.75rem 1.5rem;
+  line-height: 1.8;
 `;

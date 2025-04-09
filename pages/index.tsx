@@ -1,19 +1,13 @@
 import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
+import NextImage from 'next/image';
 import styled from 'styled-components';
 import BasicSection from 'components/BasicSection';
-import Link from 'components/Link';
 import { EnvVars } from 'env';
 import { getAllPosts } from 'utils/postsFetcher';
-import Cta from 'views/HomePage/Cta';
-import Features from 'views/HomePage/Features';
 import FeaturesGallery from 'views/HomePage/FeaturesGallery';
 import Hero from 'views/HomePage/Hero';
-import Partners from 'views/HomePage/Partners';
-import ScrollableBlogPosts from 'views/HomePage/ScrollableBlogPosts';
 import Testimonials from 'views/HomePage/Testimonials';
-import NextImage from 'next/image';
-import aboutUs from "../public/main-images/about-us.jpg";
 
 export default function Homepage({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (

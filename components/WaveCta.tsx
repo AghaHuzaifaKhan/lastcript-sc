@@ -6,9 +6,10 @@ import Container from 'components/Container';
 import SectionTitle from 'components/SectionTitle';
 import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { media } from 'utils/media';
+import { useState } from 'react';
 
 export default function WaveCta() {
-  const { setIsModalOpened } = useNewsletterModalContext();
+  const [isModalOpened, setIsModalOpened] = useState(false);
 
   return (
     <>
@@ -21,7 +22,7 @@ export default function WaveCta() {
       </svg>
       <CtaWrapper>
         <Container>
-          <Title>Have an idea in Mind? Let’s Build It Together</Title>
+          <Title>Have an idea in Mind? Let's Build It Together</Title>
           <CustomButtonGroup>
             {/* <Button onClick={() => setIsModalOpened(true)}>
               Contact Us<span>&rarr;</span>

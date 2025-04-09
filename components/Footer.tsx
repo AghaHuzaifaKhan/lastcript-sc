@@ -40,23 +40,23 @@ export default function Footer() {
         </ListContainer>
         <BottomBar>
           <ShareBar>
-            <NextLink href="https://www.twitter.com/my-saas-startup" passHref>
-              <a>
-                <TwitterIcon size={50} round={true} />
-              </a>
-            </NextLink>
-
-            <NextLink href="https://www.facebook.com/my-saas-startup" passHref>
-              <a>
-                <FacebookIcon size={50} round={true} />
-              </a>
-            </NextLink>
-
-            <NextLink href="https://www.linkedin.com/my-saas-startup" passHref>
-              <a>
-                <LinkedinIcon size={50} round={true} />
-              </a>
-            </NextLink>
+            <SocialLinkList>
+              <SocialLinkItem>
+                <SocialLink href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                  <TwitterIcon size={50} round={true} />
+                </SocialLink>
+              </SocialLinkItem>
+              <SocialLinkItem>
+                <SocialLink href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                  <FacebookIcon size={50} round={true} />
+                </SocialLink>
+              </SocialLinkItem>
+              <SocialLinkItem>
+                <SocialLink href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <LinkedinIcon size={50} round={true} />
+                </SocialLink>
+              </SocialLinkItem>
+            </SocialLinkList>
           </ShareBar>
           <Copyright>&copy; Copyright 2025 Lastcript</Copyright>
         </BottomBar>
@@ -157,5 +157,26 @@ const BottomBar = styled.div`
 
   ${media('<=tablet')} {
     flex-direction: column;
+  }
+`;
+
+const SocialLinkList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+`;
+
+const SocialLinkItem = styled.li`
+  display: inline-block;
+  margin-right: 1rem;
+`;
+
+const SocialLink = styled.a`
+  color: rgba(var(--textSecondary), 0.75);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: rgba(var(--textSecondary), 1);
   }
 `;

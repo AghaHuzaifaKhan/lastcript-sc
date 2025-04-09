@@ -1,11 +1,11 @@
-import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
+import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { staticRequest } from 'tinacms';
+import { Posts, PostsConnection, PostsConnectionEdges } from '.tina/__generated__/types';
 import Container from 'components/Container';
 import MDXRichText from 'components/MDXRichText';
-import { NonNullableChildrenDeep } from 'types';
 import { formatDate } from 'utils/formatDate';
 import { media } from 'utils/media';
 import { getReadTime } from 'utils/readTime';
@@ -14,9 +14,36 @@ import MetadataHead from 'views/SingleArticlePage/MetadataHead';
 import OpenGraphHead from 'views/SingleArticlePage/OpenGraphHead';
 import ShareWidget from 'views/SingleArticlePage/ShareWidget';
 import StructuredDataHead from 'views/SingleArticlePage/StructuredDataHead';
-import { Posts, PostsDocument, Query } from '.tina/__generated__/types';
 
-export default function SingleArticlePage(props: InferGetStaticPropsType<typeof getStaticProps>) {
+// Type for your post data
+interface PostData {
+  title: string;
+  description: string;
+  date: string;
+  tags: string[];
+  imageUrl: string;
+  body: any;
+}
+
+interface PageProps {
+  slug: string;
+  post: PostData | null;
+}
+
+// Mock data for production (replace with your actual content)
+const MOCK_POSTS: Record<string, PostData> = {
+  'example-post': {
+    title: 'Example Post',
+    description: 'This is an example blog post',
+    date: new Date().toISOString(),
+    tags: ['example', 'blog'],
+    imageUrl: '/images/default-post.jpg',
+    body: '<p>This is example content</p>'
+  }
+  // Add more posts as needed
+};
+
+export default function SingleArticlePage({ slug, post }: { slug: string; post: PostData | null }) {
   const contentRef = useRef<HTMLDivElement | null>(null);
   const [readTime, setReadTime] = useState('');
 
@@ -49,22 +76,28 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
     }
   }, []);
 
-  const { slug, data } = props;
-  const content = data.getPostsDocument.data.body;
+  const content = post?.body;
 
-  if (!data) {
+  if (!post) {
     return null;
   }
-  const { title, description, date, tags, imageUrl } = data.getPostsDocument.data as NonNullableChildrenDeep<Posts>;
-  const meta = { title, description, date: date, tags, imageUrl, author: '' };
+
+  const { title, description, date, tags, imageUrl } = post;
+  const meta = { 
+    title, 
+    description, 
+    date: date, 
+    tags: tags.join(', '),
+    imageUrl: imageUrl || '', 
+    author: '' 
+  };
   const formattedDate = formatDate(new Date(date));
-  const absoluteImageUrl = imageUrl.replace(/\/+/, '/');
+  const absoluteImageUrl = imageUrl ? (imageUrl as string).replace(/\/+/, '/') : '';
+  
   return (
     <>
       <Head>
-        <noscript>
-          <link rel="stylesheet" href="/prism-theme.css" />
-        </noscript>
+        <link rel="stylesheet" href="/prism-theme.css" media="print" onLoad={(e) => (e.currentTarget.media = 'all')} />
       </Head>
       <OpenGraphHead slug={slug} {...meta} />
       <StructuredDataHead slug={slug} {...meta} />
@@ -80,15 +113,18 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
 
 export async function getStaticPaths() {
   if (process.env.NODE_ENV === 'production') {
-    return { paths: [], fallback: 'blocking' }; // Skip Tina in production
+    return {
+      paths: Object.keys(MOCK_POSTS).map(slug => ({ params: { slug } })),
+      fallback: 'blocking',
+    };
   }
   const postsListData = await staticRequest({
     query: `
       query PostsSlugs{
-        getPostsList{
-          edges{
-            node{
-              sys{
+        postsConnection {
+          edges {
+            node {
+              _sys {
                 basename
               }
             }
@@ -106,11 +142,12 @@ export async function getStaticPaths() {
     };
   }
 
-  type NullAwarePostsList = { getPostsList: NonNullableChildrenDeep<Query['getPostsList']> };
+  type NullAwarePostsList = { postsConnection: PostsConnection };
+  type PostEdge = PostsConnectionEdges;
   return {
-    paths: (postsListData as NullAwarePostsList).getPostsList.edges.map((edge) => ({
-      params: { slug: normalizePostName(edge.node.sys.basename) },
-    })),
+    paths: (postsListData as NullAwarePostsList).postsConnection.edges?.map((edge) => ({
+      params: { slug: normalizePostName(edge?.node?._sys.basename || '') },
+    })) || [],
     fallback: false,
   };
 }
@@ -121,6 +158,14 @@ function normalizePostName(postName: string) {
 
 export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: string }>) {
   const { slug } = params as { slug: string };
+  // In production, use mock data or fetch from your API
+  if (process.env.NODE_ENV === 'production') {
+    const post = MOCK_POSTS[slug] || null;
+    if (!post) {
+      return { notFound: true };
+    }
+    return { props: { slug, post } };
+  }
   const variables = { relativePath: `${slug}.mdx` };
   const query = `
     query BlogPostQuery($relativePath: String!) {
@@ -140,7 +185,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
   const data = (await staticRequest({
     query: query,
     variables: variables,
-  })) as { getPostsDocument: PostsDocument };
+  })) as { getPostsDocument: { data: Posts } };
 
   return {
     props: { slug, variables, query, data },

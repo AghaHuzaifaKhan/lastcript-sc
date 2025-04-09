@@ -28,7 +28,7 @@ const navItems: NavItems = [
   // { title: 'Sign up', href: '/sign-up', outlined: true },
 ];
 
-const TinaCMS = dynamic(() => import('tinacms'), { ssr: false });
+const TinaWrapper = dynamic(() => import('tinacms').then((cms) => cms.default), { ssr: false });
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -55,7 +55,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Navbar items={navItems} />
         <TinaEditProvider
           editMode={
-            <TinaCMS
+            <TinaWrapper
               query={pageProps.query}
               variables={pageProps.variables}
               data={pageProps.data}
@@ -65,7 +65,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               {...pageProps}
             >
               {(livePageProps: any) => <Component {...livePageProps} />}
-            </TinaCMS>
+            </TinaWrapper>
           }
         >
           <Component {...pageProps} />

@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npx tinacms server:start -c \"next dev\"",
-    "build": "npx tinacms server:start -c \"next build\"",
-    "start": "npx tinacms server:start -c \"next start\"",
-    "lint": "next lint"
+    "dev": "tinacms server:start -c \"npx tinacms server:start -c \"next dev\"\"",
+    "build": "tinacms server:start -c \"npx tinacms server:start -c \"next build\"\"",
+    "start": "tinacms server:start -c \"npx tinacms server:start -c \"next start\"\"",
+    "lint": "next lint",
+    "tina:gen": "tinacms dev:gen"
   },
   "dependencies": {
     "@accessible/drawer": "^3.0.2",
