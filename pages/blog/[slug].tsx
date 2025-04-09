@@ -79,6 +79,9 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
 }
 
 export async function getStaticPaths() {
+  if (process.env.NODE_ENV === 'production') {
+    return { paths: [], fallback: 'blocking' }; // Skip Tina in production
+  }
   const postsListData = await staticRequest({
     query: `
       query PostsSlugs{
