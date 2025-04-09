@@ -1,16 +1,13 @@
+import { useState } from 'react';
 import NextLink from 'next/link';
 import styled from 'styled-components';
 import Button from 'components/Button';
 import ButtonGroup from 'components/ButtonGroup';
 import Container from 'components/Container';
 import SectionTitle from 'components/SectionTitle';
-import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { media } from 'utils/media';
-import { useState } from 'react';
 
 export default function WaveCta() {
-  const [isModalOpened, setIsModalOpened] = useState(false);
-
   return (
     <>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
@@ -22,11 +19,8 @@ export default function WaveCta() {
       </svg>
       <CtaWrapper>
         <Container>
-          <Title>Have an idea in Mind? Let's Build It Together</Title>
+          <Title>Have an idea in Mind? Let&apos;s Build It Together</Title>
           <CustomButtonGroup>
-            {/* <Button onClick={() => setIsModalOpened(true)}>
-              Contact Us<span>&rarr;</span>
-            </Button> */}
             <NextLink href="/features" passHref>
               <OutlinedButton transparent>
                 Contact Us <span>&rarr;</span>
