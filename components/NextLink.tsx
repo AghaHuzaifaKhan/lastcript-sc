@@ -20,4 +20,6 @@ export default function NextLink({ href, children, className }: NextLinkProps) {
       {children}
     </StyledLink>
   );
-} 
+}
+
+// The `passHref` prop is commonly used with Next.js `Link` components to pass the `href` prop to child components. 
